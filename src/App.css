@@ -1,0 +1,632 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: #f5e6d3;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #4a3728;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: #6b4423;
+  padding: 35px;
+  color: #ffffff;
+  box-shadow: 0 4px 25px rgba(107, 68, 35, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.App-header::before {
+  display: none;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: none;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-main {
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.note-input {
+  background: #fff9f0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(107, 68, 35, 0.1);
+  margin: 20px auto 40px auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.note-input::before {
+  display: none;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border: 2px solid #d4c4b5;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background: #fff9f0;
+  color: #4a3728;
+  line-height: 1.4;
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #8b3455;
+  box-shadow: 0 0 0 4px rgba(139, 94, 52, 0.1);
+}
+
+textarea::placeholder {
+  color: #8b5e34;
+  text-align: left;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  transform: none;
+  width: calc(100% - 40px);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+.red-button {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.yellow-button {
+  background: linear-gradient(135deg, #ffd700 0%, #f6ad55 100%);
+  color: #744210;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.green-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.blue-button {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.grid-header {
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.grid-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 200px;
+}
+
+.note {
+  padding: 15px;
+  border-radius: 4px;
+  min-height: 100px;
+  color: black;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  word-wrap: break-word;
+}
+
+.red-header {
+  background-color: #ff4444;
+  color: white;
+}
+
+.yellow-header {
+  background-color: #ffd700;
+}
+
+.green-header {
+  background-color: #90EE90;
+}
+
+.blue-header {
+  background-color: #87CEEB;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.table-container {
+  position: relative;
+  background: #fff9f0;
+  padding: 10px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(107, 68, 35, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.table-container::before {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+  table-layout: fixed;
+}
+
+tr {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+td {
+  flex: 1;
+  border: none;
+  padding: 20px;
+  height: 120px;
+  vertical-align: top;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(107, 68, 35, 0.05);
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  background: #fff9f0;
+  color: #4a3728;
+  margin: 0;
+}
+
+td::after {
+  display: none;
+}
+
+td:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+td:empty {
+  background: #f8f2e8 !important;
+  position: relative;
+}
+
+td:empty::before {
+  content: '＋';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #4a4a4a;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .App-main {
+    padding: 15px;
+  }
+  
+  table {
+    border-spacing: 6px;
+  }
+  
+  td {
+    padding: 15px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note-input, .table-container {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-top: 10px;
+  color: #f5e6d3;
+}
+
+.character-count {
+  text-align: right;
+  color: #8b5e34;
+  font-size: 0.8rem;
+  margin: 5px 5px 15px 0;
+}
+
+.editing-indicator {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f8f2e8;
+  border-radius: 8px;
+  color: #4a3728;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.editing-indicator::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.cancel-button {
+  background: #6b4423;
+  color: #fff9f0;
+  padding: 5px 15px;
+  min-width: auto;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+.tooltip {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+.tooltip.success {
+  background: #6b4423;
+}
+
+.tooltip.error {
+  background: #8b3e3e;
+}
+
+.note-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-text {
+  word-break: break-word;
+  color: black;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.has-note:hover .note-actions {
+  opacity: 1;
+}
+
+.edit-button,
+.delete-button {
+  min-width: auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  background: #6b4423;
+  color: #fff9f0;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.delete-button:hover {
+  background: #ff4444;
+  color: white;
+}
+
+.edit-button:hover {
+  background: #3498db;
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add hover effect for empty cells */
+td:empty:hover {
+  background: #f5e6d3 !important;
+  cursor: pointer;
+}
+
+@keyframes borderGradient {
+  0%, 100% {
+    filter: none;
+  }
+}
+
+@keyframes subtleBorderGradient {
+  0%, 100% {
+    filter: none;
+  }
+}
+
+/* Make sure all cells have the same width */
+tr {
+  display: flex;
+  width: 100%;
+}
+
+/* Ensure last row margin is removed */
+tr:last-child {
+  margin-bottom: 0;
+}
+
+.notes-sections {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #fff9f0;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(107, 68, 35, 0.1);
+}
+
+.notes-column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.column-header {
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note {
+  padding: 15px;
+  border-radius: 12px;
+  min-height: 100px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) {
+  .notes-sections {
+    flex-direction: column;
+  }
+
+  .notes-column {
+    width: 100%;
+  }
+}
+
+.title-input {
+  width: 90%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 2px solid #d4c4b5;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  background: #fff9f0;
+  color: #4a3728;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-input:focus {
+  outline: none;
+  border-color: #8b3455;
+  box-shadow: 0 0 0 4px rgba(139, 94, 52, 0.1);
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #4a3728;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 5px;
+}
+
+.note {
+  padding: 15px;
+  border-radius: 12px;
+  min-height: 120px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.note-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.note-text {
+  flex-grow: 1;
+  margin-top: 8px;
+}
